@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+    <title>Car | Master</title>
+</head>
+
+<body>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href = "/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl" style="color:black;">Car | Master</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+          <a href="/" class="mr-5 hover:text-black">Home</a>
+          <a href = "/model" class="mr-5 hover:text-black">Model</a>
+          <a href = "/contact" class="mr-5 hover:text-black">Contact</a>
+          <a href = "/about" class="mr-5 hover:text-black">About</a>
+        </nav>
+          <a href="/predict" target="_parent">
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">What's My Car Worth?
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </a>
+      </div>
+    </header>
+    <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+>
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-2 text-white">
+      Vehicle Price Prediction!
+    </h2>
+    <h3 class="text-2xl mb-8 text-gray-200">
+      Get an instant evaluation of your car.
+    </h3>
+
+      <a href="/predict">
+          <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+      Try it!
+    </button>
+      </a>
+  </div>
+</div>
+
+    <section class="container mx-auto px-6 p-10">
+  <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+    Features
+  </h2>
+  <div class="flex items-center flex-wrap mb-20">
+    <div class="w-full md:w-1/2">
+      <h4 class="text-3xl text-gray-800 font-bold mb-3">Right Vehicle | Right Now</h4>
+      <p class="text-gray-600 mb-8">Vendor sets a
+          price seemingly at random, and the buyer has no knowledge of the car or its current value.
+      Don't make that mistake. Try this tool and get an estimation of your car before buying or selling.</p>
+    </div>
+    <div class="w-full md:w-1/2">
+      <img src="https://images.pexels.com/photos/6691970/pexels-photo-6691970.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Monitoring" />
+    </div>
+  </div>
+
+  <div class="flex items-center flex-wrap mb-20">
+    <div class="w-full md:w-1/2">
+      <img src="https://images.pexels.com/photos/2691479/pexels-photo-2691479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="No Name" />
+    </div>
+    <div class="w-full md:w-1/2 pl-10">
+      <h4 class="text-3xl text-gray-800 font-bold mb-3">No brand | No name</h4>
+      <p class="text-gray-600 mb-8">Different countries have different market for different brands and to overcome these biases, we
+      developed a model that make correlation between brand-new vehicle's price and its depreciated cost over the years. This vehicle car prediction website doesn't rely on car's brand name to predict
+      its price.</p>
+    </div>
+  </div>
+
+  <div class="flex items-center flex-wrap mb-20">
+    <div class="w-full md:w-1/2">
+      <h4 class="text-3xl text-gray-800 font-bold mb-3">Free to choose | Free to use</h4>
+      <p class="text-gray-600 mb-8">Our vehicle price prediction tool allows you to predict the price without creating any account.
+      This is an ad free and easy-to-use website.</p>
+    </div>
+    <div class="w-full md:w-1/2">
+      <img src="https://images.pexels.com/photos/2705755/pexels-photo-2705755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="free" />
+    </div>
+  </div>
+</section>
+
+    <footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl">Car | Master</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Car | Master —
+      <a href="https://github.com/nsingh34" target="_blank" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@nsingh34</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a href="https://www.facebook.com/navdeep.singhsaini.7" target="_blank" class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://www.instagram.com/ursnav_e/" target="_blank">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/singh-navdeep1998/" target="_blank">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+<style>
+ html,
+body {
+    overflow-x: hidden;
+    font-family: 'Stylish';font-size: 22px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+/* On mouse-over */
+.btn:hover {background: #eee;}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img-profile{
+  border-radius: 50%;
+}
+
+.
+button{
+	-webkit-appearance: none;
+	margin-right: 0;
+}
+
+
+.info {
+    position: relative;
+    padding: 20px;
+}
+
+h2 {}
+
+.info h2 {
+    color: #16f1dc;
+    font-size: 34px;
+}
+
+.info h3 {
+    color: white;
+    letter-spacing: 1.2px;
+    margin-top:  20px;
+}
+
+.svg-wrap {
+    display: flex;
+    margin-top: 14px;
+}
+
+.svg-wrap a {
+    border: 0;
+    padding: 0;
+    display: flex;
+    color: #bbbbbb;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+.svg-wrap a svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.2s ease-in-out;
+    margin-right: 13px;
+}
+
+.svg-wrap a:hover svg {
+    fill: #16f1dc;
+    cursor: pointer;
+}
+
+.svg-wrap a:hover {
+    background-color: transparent;
+    color: #16f1dc;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 900px){
+	.content{
+		padding: 10px 0 0;
+		display: block;
+	}
+	.map{
+		display: none;
+	}
+	.contact{
+		width: 100%;
+		flex-direction: column-reverse;
+		border-radius: 0;
+		box-shadow: 0px 0px 0px 0px;
+	}
+	.other{
+		width: 100%;
+		padding: 20px 0;
+	}
+	.form{
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 660px){
+	.content{
+		align-items: flex-start;
+	}
+}
+</style>
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+    <title>Car | Master</title>
+</head>
+
+<body>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href = "/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl" style="color:black;">Car | Master</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+          <a href="/" class="mr-5 hover:text-black">Home</a>
+          <a href = "/model" class="mr-5 hover:text-black">Model</a>
+          <a href = "/contact" class="mr-5 hover:text-black">Contact</a>
+          <a href = "/about" class="mr-5 hover:text-black">About</a>
+        </nav>
+      </div>
+    </header>
+    <div style = "position: fixed; left: 0; top: 0; z-index: -1;">
+        <img src="https://images.pexels.com/photos/753876/pexels-photo-753876.jpeg?cs=srgb&dl=pexels-stephan-m%C3%BCller-753876.jpg&fm=jpg" style = "min-width: 100vw; min-height: 100vh;">
+    </div>
+    <form action="{{ url_for('predict')}}" method="post">
+
+        <div class="login-box">
+            <h1>Price a car</h1>
+            <small>Get an instant evaluation of your car</small>
+            <p class="label">Year</p>
+            <div class="input-box">
+                <input class="Year" name="Year" type="number" min="1980" max="2021" required></input>
+            </div>
+            <p class="label">MSRP for a new vehicle?</p>
+            <div class="input-box">
+                <input class="Present_Price" name="Present_Price" type="number"
+                       min="0" max="5000000" placeholder="Enter the price of a new vehicle in CAD" required></input>
+            </div>
+            <p class="label">Kilometers?</p>
+            <div class="input-box">
+                <input class="Kms_Driven" name="Kms_Driven" type="number" min="0" max="5000000" placeholder="0" required></input>
+            </div>
+            <p class="label">Fuel type?</p>
+            <div class="list__item">
+                <input type="radio" class="radio-btn" name="Fuel_Type_Petrol" id="petrol" checked/>
+                <label for="petrol" class="label_radio">Petrol</label>
+                <input type="radio" class="radio-btn" name="Fuel_Type_Petrol" id="diesel" />
+                <label for="diesel" class="label_radio">Diesel</label>
+            </div>
+
+            <p class="label">Ownership?</p>
+            <div class="list__item">
+                <input type="radio" class="radio-btn" name="Owner" id="dealer" checked/>
+                <label for="dealer" class="label_radio">Dealer</label>
+                <input type="radio" class="radio-btn" name="Owner" id="individual" />
+                <label for="individual" class="label_radio">Private</label>
+            </div>
+
+            <p class="label">Transmission?</p>
+            <div class="list__item">
+                <input type="radio" class="radio-btn" name="Transmission_Mannual" id="auto" checked/>
+                <label for="auto" class="label_radio">Automatic</label>
+                <input type="radio" class="radio-btn" name="Transmission_Mannual" id="manual" />
+                <label for="manual" class="label_radio">Manual</label>
+            </div>
+
+
+            <p class="label">How many previous owners of the car?</p>
+            <div class="list__item">
+                <input type="radio" class="radio-btn" name="Seller_Type_Individual" id="zero" checked/>
+                <label for="zero" class="label_radio">Zero</label>
+                <input type="radio" class="radio-btn" name="Seller_Type_Individual" id="one" />
+                <label for="one" class="label_radio">One</label>
+                <input type="radio" class="radio-btn" name="Seller_Type_Individual" id="two" />
+                <label for="two" class="label_radio">Two</label>
+            </div>
+            <br><h3 style="position:relative;text-align: center;">{{ prediction_text }}</h3>
+            <br><input type="submit" class="let" value="Let's get the price." style="color:FAEBD7;background-color: #191d2a;">
+        </div>
+    </form>
+
+<style>
+    html,
+body {
+    overflow-x: hidden;
+    font-family: 'Stylish';font-size: 22px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+.let:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+ * {
+        box-sizing: border-box;
+        }
+
+        .login-box {
+            position: relative;
+            left:30%;
+            width: 800px;
+            padding: 20px 0px 20px 0px;
+            text-align: center;
+            color: #252B37;
+            background-color: #191d2a;
+            animation: textColor 5s ease infinite;
+            border-radius: 10px;
+        }
+        .login-box:after {
+            position: absolute;
+            content: "";
+            top: 5vw;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            transform: scale(0.85);
+            -webkit-filter: blur(30px);
+            -moz-filter: blur(30px);
+            -ms-filter: blur(30px);
+            filter: blur(30px);
+            background: linear-gradient(270deg, #0fffc1, #7e0fff);
+            background-size: 200% 200%;
+            animation: animateGlow 5s ease infinite;
+        }
+        @keyframes animateGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes textColor {
+            0% {
+                color: #7e0fff;
+            }
+            50% {
+                color: #0fffc1;
+            }
+            100% {
+                color: #7e0fff;
+            }
+        }
+
+        @keyframes buttonGlow {
+            0% {
+                /* background: #7e0fff; */
+                text-shadow: 0px 0px 5px #7e0fff;
+                color: #7e0fff;
+            }
+            50% {
+                /* background: #0fffc1; */
+
+                text-shadow: 0px 0px 5px #0fffc1;
+                color: #0fffc1;
+            }
+            100% {
+                /* background: #7e0fff; */
+                text-shadow: 0px 0px 5px #7e0fff;
+                color: #7e0fff;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        .input-box {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 10 auto;
+            border-radius: 2px;
+            padding: 0px;
+            background: #1f2433;
+        }
+        .input-box:after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 999;
+            height: 2px;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            background-position: 0% 0%;
+            background: linear-gradient(
+            to right,
+            #b294ff,
+            #57e6e6,
+            #feffb8,
+            #57e6e6,
+            #b294ff,
+            #57e6e6
+            );
+            background-size: 500% auto;
+            animation: gradient 3s linear infinite;
+        }
+
+        .input-box input {
+            flex-grow: 1;
+            color: #bfd2ff;
+            vertical-align: middle;
+            background: none;
+            width: 100%;
+            font-size: 12px;
+            border: none;
+            padding: 10px;
+            outline: none;
+        }
+
+        .input-box input::-webkit-input-placeholder {
+            color: #7881a1;
+        }
+
+
+        .label{
+            font-size: 14px;
+            padding: 0px;
+            margin: 0px;
+            text-align: left;
+            margin: 15px 0px 5px 15px;
+        }
+
+        .login-box input[type=date]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        .login-box input[type=password]{
+            filter: invert(1);
+            color: black;
+
+        }
+
+        .login-box input[type=button]{
+            width: 90%;
+            animation: textColor 5s ease infinite;
+            background: none;
+            outline: none;
+            border: none;
+            padding: 5px;
+            margin: 10px 10px 0px 10px;
+        }
+
+        .login-box input[type=button]:hover{
+            cursor: pointer;
+            margin: 10px 10px 0px 10px;
+            animation: buttonGlow 5s ease infinite;
+        }
+
+        .list__item {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        .list__item1 {
+            position: relative;
+            margin-left: 25px;
+        }
+
+
+        .radio-btn {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            color: transparent;
+        }
+        .radio-btn:checked + .label_radio {
+            animation: textColor 5s ease infinite;
+        }
+
+        .radio-btn::before {
+            margin-right: 10px;
+        }
+
+
+        .label_radio {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .label_radio::before {
+            display: inline-block;
+            content: ">";
+            margin-right: 5px;
+        }
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img-profile{
+  border-radius: 50%;
+}
+
+.
+button{
+	-webkit-appearance: none;
+	margin-right: 0;
+}
+
+
+.info {
+    position: relative;
+    padding: 20px;
+}
+
+h2 {}
+
+.info h2 {
+    color: #16f1dc;
+    font-size: 34px;
+}
+
+.info h3 {
+    color: white;
+    letter-spacing: 1.2px;
+    margin-top:  20px;
+}
+
+.svg-wrap {
+    display: flex;
+    margin-top: 14px;
+}
+
+.svg-wrap a {
+    border: 0;
+    padding: 0;
+    display: flex;
+    color: #bbbbbb;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+.svg-wrap a svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.2s ease-in-out;
+    margin-right: 13px;
+}
+
+.svg-wrap a:hover svg {
+    fill: #16f1dc;
+    cursor: pointer;
+}
+
+.svg-wrap a:hover {
+    background-color: transparent;
+    color: #16f1dc;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 900px){
+	.content{
+		padding: 10px 0 0;
+		display: block;
+	}
+	.map{
+		display: none;
+	}
+	.contact{
+		width: 100%;
+		flex-direction: column-reverse;
+		border-radius: 0;
+		box-shadow: 0px 0px 0px 0px;
+	}
+	.other{
+		width: 100%;
+		padding: 20px 0;
+	}
+	.form{
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 660px){
+	.content{
+		align-items: flex-start;
+	}
+}
+</style>
+</body>
+
+</html>

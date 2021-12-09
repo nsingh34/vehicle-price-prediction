@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+    <title>Car | Master</title>
+</head>
+
+<body>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href = "/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl" style="color:black;">Car | Master</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+          <a href="/" class="mr-5 hover:text-black">Home</a>
+          <a href = "/model" class="mr-5 hover:text-black">Model</a>
+          <a href = "/contact" class="mr-5 hover:text-black">Contact</a>
+          <a href = "/about" class="mr-5 hover:text-black">About</a>
+        </nav>
+          <a href="/predict" target="_parent">
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">What's My Car Worth?
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </a>
+      </div>
+    </header>
+
+    <div class="row">
+  <div class="column">
+    <img class="img-profile" src="https://media-exp1.licdn.com/dms/image/C5603AQF83UiKwe-RUA/profile-displayphoto-shrink_800_800/0/1622936944575?e=1644451200&v=beta&t=iBYKEyIOiz_3gJIBvVf_XHNro51w9SQEa30kKTb0qFc" alt="Avatar"
+         style="width:200px;position: relative; left: 60%; top: 30%;">
+  </div>
+  <div class="column">
+    <blockquote style="margin-right: 150px;">Hi, my name is Navdeep Singh.  I am a Bachelor of Computer Science student at the University of Guelph in Guelph, Ontario, Canada. I'm searching for a new career opportunity. I've highlighted some of the work I've done on my personal projects.
+        To see related work, please visit my GitHub account - <a href="https://github.com/nsingh34" target="_blank">https://github.com/nsingh34</a>.</blockquote>
+  </div>
+  </div>
+    <section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+      <h1 style="left:30%;color:black">Here are a handful of the projects I've worked on that I'd like to highlight.</h1>
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.pexels.com/photos/8982690/pexels-photo-8982690.jpeg?cs=srgb&dl=pexels-kindel-media-8982690.jpg&fm=jpg" alt="blog">
+          <div class="p-6">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Machine Learning</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Vehicle Price Prediction</h1>
+            <p class="leading-relaxed mb-3">Used vehicle price prediction in python using Random Forest Regression Algorithm.</p>
+            <div class="flex items-center flex-wrap ">
+              <a href="https://github.com/nsingh34" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" target="_blank">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.pexels.com/photos/4031442/pexels-photo-4031442.jpeg?cs=srgb&dl=pexels-edward-jenner-4031442.jpg&fm=jpg" alt="blog">
+          <div class="p-6">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">DNA barcoding</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">HACSim R shiny website</h1>
+            <p class="leading-relaxed mb-3">Developed an R shiny website for a PhD student at University of Guelph. This is an
+            online simulator to perform DNA barcoding. Go to <a href="https://hacsim.shinyapps.io/hacsim-rshiny-app/" target="_blank">
+                    https://hacsim.shinyapps.io/hacsim-rshiny-app/
+                </a> to explore more.</p>
+            <div class="flex items-center flex-wrap">
+              <a href="https://github.com/nsingh34" target="_blank" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/3">
+        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+          <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?cs=srgb&dl=pexels-pixabay-270404.jpg&fm=jpg" alt="blog">
+          <div class="p-6">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Microservices</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Flight and Hotel Reservation System in Spring Boot</h1>
+            <p class="leading-relaxed mb-3">A RESTful web microservices using Spring Boot. A Flight and Hotel reservation system is created
+            to book a flight and hotel.</p>
+            <div class="flex items-center flex-wrap ">
+              <a href="https://github.com/nsingh34" target="_blank" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    html,
+body {
+    overflow-x: hidden;
+    font-family: 'Stylish';font-size: 22px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img-profile{
+  border-radius: 50%;
+}
+
+.
+button{
+	-webkit-appearance: none;
+	margin-right: 0;
+}
+
+
+.info {
+    position: relative;
+    padding: 20px;
+}
+
+h2 {}
+
+.info h2 {
+    color: #16f1dc;
+    font-size: 34px;
+}
+
+.info h3 {
+    color: white;
+    letter-spacing: 1.2px;
+    margin-top:  20px;
+}
+
+.svg-wrap {
+    display: flex;
+    margin-top: 14px;
+}
+
+.svg-wrap a {
+    border: 0;
+    padding: 0;
+    display: flex;
+    color: #bbbbbb;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+.svg-wrap a svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.2s ease-in-out;
+    margin-right: 13px;
+}
+
+.svg-wrap a:hover svg {
+    fill: #16f1dc;
+    cursor: pointer;
+}
+
+.svg-wrap a:hover {
+    background-color: transparent;
+    color: #16f1dc;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 900px){
+	.content{
+		padding: 10px 0 0;
+		display: block;
+	}
+	.map{
+		display: none;
+	}
+	.contact{
+		width: 100%;
+		flex-direction: column-reverse;
+		border-radius: 0;
+		box-shadow: 0px 0px 0px 0px;
+	}
+	.other{
+		width: 100%;
+		padding: 20px 0;
+	}
+	.form{
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 660px){
+	.content{
+		align-items: flex-start;
+	}
+}
+</style>
+</body>
+
+</html>
